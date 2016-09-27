@@ -1,2 +1,1 @@
-# customtemplates
-# customtemplates
+# Custom Template Documentation
