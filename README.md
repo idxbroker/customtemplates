@@ -1,13 +1,13 @@
 # Custom Template Documentation
 
-----
+
 ## IDX Broker uses Twig for templates
 What is Twig?
 
 > Twig is a modern template engine for PHP. Twig compiles templates down to plain optimized PHP code. The overhead compared to regular PHP code was reduced to the very minimum.
 
 
-----
+
 ## Basic usage with IDX Broker
 1. Use the example template in this repo
 2. Modify as needed
