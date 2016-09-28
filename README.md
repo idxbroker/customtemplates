@@ -21,9 +21,9 @@ What is Twig?
 
 * Because we are not writing these templates, IDX Broker will not be supporting them.
 
-* Currently there is no way to restrict a client for getting your template should you offer and removing the template if they leave your dev code.
+* There is no way of removing a template if a client leaves your dev code.
 
-* Versioning is not completely supported at this time. Like I mentioned this is very new and this likely going to prove something we need to re think and work out.
+* Versioning is not completely supported at this time.
 
 * IDX Broker will not be involved in any disputes over templates.
 
