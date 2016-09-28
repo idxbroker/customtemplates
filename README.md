@@ -9,7 +9,7 @@ What is Twig?
 
 
 ## Basic usage with IDX Broker
-1. Use the example template in this repo
+1. Use the sample-twig file in this repo
 2. Modify as needed
 3. Submit to developers@idxbroker.com for review
 
