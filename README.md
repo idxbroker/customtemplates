@@ -25,6 +25,11 @@ What is Twig?
 
 * Versioning is not completely supported at this time.
 
+* Currently there is no way to restrict a client for getting your template should you offer and removing the template if they leave your dev code.
+
+* Versioning is not completely supported at this time. This is very new and this likely going to prove something we need to re think and work out.
+
+
 * IDX Broker will not be involved in any disputes over templates.
 
 * IDX Broker Original is not supported for custom templates
@@ -32,10 +37,9 @@ What is Twig?
 
 
 
->This offering is still in alpha stage and will be evolving. 
+>This offering is still in alpha stage and will be evolving.
 Feed back welcome.
 
 
-## Helpful Links 
+## Helpful Links
 [Twig](http://twig.sensiolabs.org/)
-
