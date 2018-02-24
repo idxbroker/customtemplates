@@ -14,7 +14,7 @@
         {% endif %}
         <div id="IDX-resultsRow">
             <div id="IDX-resultsContainer" class="IDX-pageContainer {{ columnSize }} IDX-totalResults-{{ totalResults }}">
-                {# Header will have pagination and map. #}
+                {# Header will have pagination, refinement search and map. #}
                 {% set defaultIdxID = '' %}
                 {% if refinementData.idxID %}
                     {% set defaultIdxID = refinementData.idxID %}
@@ -58,7 +58,16 @@
                             </div>
                         {% endspaceless %}
                     </div>
+
+                    {# Results Returned Meta Data. #}
+                    <div id="IDX-resultsCountWrap" class="IDX-message IDX-alert IDX-alert-success IDX-totalResults-{{ totalResults }} IDX-center">
+                        <span class="IDX-resultsCount">{{ totalResults }}</span> results returned
+                    </div>
+
                     {% if truncated %}
+                        <div id="IDX-resultsCountMessage" class="IDX-message IDX-alert IDX-alert-info IDX-center">
+                            maximum number of listings that can be presented.
+                        </div>
                     {% elseif totalResults == 0 %}
                         <div id="IDX-noResultsMessage" class="IDX-resultsCountMessage">
                             {% if pageURL == 'agent' %}
@@ -103,16 +112,185 @@
                         {% endspaceless %}
                     {% endif %}
 
-               
+                    {# Refinement search. #}
+                    {% if refinementData and totalResults != 0 %}
+                        <div id="IDX-resultsRefineSearchToggle" class="IDX-control-group">
+                            <button id="IDX-refineSearchFormToggle" class="IDX-btn IDX-btn-default">
+                                Refinement <span class="IDX-arrow"><b></b></span>
+                            </button>
+                        </div>
+                        <div id="IDX-resultsRefineSearchWrap">
+                            <form id="IDX-refinementSearchForm" action="{{ formAction }}" class="IDX-searchForm" method="get">
+                                {# CCZ Select. #}
+                                <div id="IDX-ccz-group" class="IDX-control-group">
+                                    <div class="IDX-controls">
+                                        {% set cczLabel = labels.cityName %}
+                                        {% if refinementData.ccz.type == 'county' %}
+                                            {% set cczLabel = labels.countyName %}
+                                        {% elseif refinementData.ccz.type == 'zipcode' %}
+                                            {% set cczLabel = labels.zipcode %}
+                                        {% endif %}
+                                        <label for="IDX-ccz-select" class="{% if middleware %}IDX-control-label{% else %} IDX-label-for-nojs {% endif %}">
+                                            {{ cczLabel }}
+                                        </label>
+                                        <select id="IDX-ccz-select" class="IDX-select" multiple="multiple">
+                                            <option></option>
+                                            {% for key, displayName in refinementData.ccz[refinementData.ccz.type] %}
+                                                <option value="{{ key }}">{{ displayName }}</option>
+                                            {% endfor %}
+                                        </select>
+                                        <input type="text" name="ccz" id="IDX-ccz" class="IDX-hidden" value="{{ refinementData.ccz.type }}">
+                                    </div>
+                                </div>
+                                {# Property Status. #}
+                                {% if refinementData.status.values | length > 0 and refinementData.status.searchable %}
+                                    <div id="IDX-propStatus-group" class="IDX-control-group">
+                                        <div class="IDX-controls">
+                                            <label for="IDX-propStatus" class="{% if middleware %}IDX-control-label{% else %} IDX-label-for-nojs {% endif %}">
+                                                {{ labels.propStatus }}
+                                            </label>
+                                            <select id="IDX-refinepropStatus" name="{{ refinementData.status.field }}[]" class="IDX-select" multiple="multiple">
+                                                {% for key, val in refinementData.status.options %}
+                                                    {% set selected = '' %}
+                                                    {% if val in refinementData.status.values %}
+                                                        {% set selected = 'selected="selected"' %}
+                                                    {% endif %}
+                                                    <option value="{{ val }}" {{ selected }}> {{ val }} </option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                                {# Price. #}
+                                <div id="IDX-price-group" class="IDX-control-group">
+                                   <div id="IDX-minPrice-group" class=" {% if hiddenFields.minPrice %}IDX-hidden{% endif %} IDX-half">
+                                        <div class="IDX-controls">
+                                            <label for="IDX-minPrice" class="{% if middleware %}IDX-control-label{% else %} IDX-label-for-nojs {% endif %}">
+                                                {{ labels.minPrice }}
+                                            </label>
+                                            <input type="text" name="lp" id="IDX-minPrice" value="{{ refinementData.lp }}" class="IDX-input" placeholder="{{ labels.minPrice }}">
+                                        </div>
+                                    </div>
+                                    <div id="IDX-maxPrice-group" class=" {% if hiddenFields.maxPrice %}IDX-hidden{% endif %} IDX-half">
+                                        <div class="IDX-controls">
+                                            <label for="IDX-maxPrice" class="{% if middleware %}IDX-control-label{% else %} IDX-label-for-nojs {% endif %}">{{ labels.maxPrice }}</label>
+                                            <input type="text" name="hp" id="IDX-maxPrice" value="{{ refinementData.hp }}" class="IDX-input" placeholder="{{ labels.maxPrice }}">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {# Sqft. #}
+                                <div id="IDX-sqft-group" class="IDX-control-group">
+                                    <div class="IDX-controls">
+                                        <label for="IDX-sqft" class="{% if middleware %}IDX-control-label{% else %} IDX-label-for-nojs {% endif %}">{{ labels.sqFt }}</label>
+                                        <input type="text" name="sqft" id="IDX-sqft" value="{{ refinementData.sqft }}" class="IDX-input" placeholder="{{ labels.sqFt }}">
+                                    </div>
+                                </div>
+                                {# Max days listed. #}
+                                <div id="IDX-add-group" class="IDX-control-group">
+                                    <div class="IDX-controls">
+                                        <label for="IDX-add" class="{% if middleware %}IDX-control-label{% else %} IDX-label-for-nojs {% endif %}">Max Days Listed</label>
+                                        <input type="text" name="add" id="IDX-add" value="{{ refinementData.add }}" class="IDX-input" placeholder="Max Days Listed">
+                                    </div>
+                                </div>
+                                {# Results per page. #}
+                                <div id="IDX-per-group" class="IDX-control-group">
+                                    <div class="IDX-controls">
+                                        <label for="IDX-per" class="{% if middleware %}IDX-control-label{% else %} IDX-label-for-nojs {% endif %}">Results per page</label>
+                                        <select id="IDX-per" name="per" class="IDX-select">
+                                            <option></option>
+                                            {% for i in [ 5, 10, 25, 50, 100 ] %}
+                                                <option value="{{ i }}" {% if i == refinementData.per %}selected{% endif %}>{{ i }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                </div>
+                                {# Sort by. #}
+                                <div id="IDX-srt-group" class="IDX-control-group">
+                                    <div class="IDX-controls">
+                                        <label for="IDX-srt" class="{% if middleware %}IDX-control-label{% else %} IDX-label-for-nojs {% endif %}">
+                                            Sort By
+                                        </label>
+                                        <select id="IDX-srt" name="srt" class="IDX-select" autocomplete="off">
+                                            <option></option>
+                                            {% for value, name in refinementData.sortByOptions %}
+                                                <option value="{{ value }}" {% if value == refinementData.srt %}selected{% endif %}>
+                                                    {{ name }}
+                                                </option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                </div>
+                                {# Hidden fields. #}
+                                {% for key in refinementData|keys %}
+                                    {% if key not in ['ccz', 'lp', 'hp', 'sqft', 'add', 'per', 'srt'] %}
+                                        {% if refinementData[key] is iterable %}
+                                            {% for value in refinementData[key] %}
+                                                <input type="text" name="{{ key|raw }}[]" value="{{ value|raw }}" class="IDX-hidden">
+                                            {% endfor %}
+                                        {% else %}
+                                            <input type="text" name="{{ key|raw }}" value="{{ refinementData[key]|raw }}" class="IDX-hidden">
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                                <input type="text" id="IDX-start" name="start" value="{{ pager.currentPage }}" class="IDX-hidden">
+                                <input type="submit" id="IDX-resultsRefineSubmit" class="IDX-btn IDX-btn-default" value="Search">
+                            </form>
+                        </div>
+                    {# No Refinement Search. #}
+                    {% else %}
+                        <input type="text" id="IDX-start" name="start" value="{{ pager.currentPage }}" class="IDX-hidden">
+                    {% endif %}
                 </div>
                 <!-- /results header -->
+
+                {# Results map. #}
+                {% if resultsMap %}
+                    <div id="IDX-resultsMap">
+                        <div id="IDX-map" class="IDX-resultsMap IDX-{{ resultType }}Map"></div>
+                    </div>
+                    {# New map pins+clusters. #}
+                    {% include 'leaflet-1.001.twig' %}
+
+                    {# Results content. #}
+                    {{ tools.resultsContent(category, resultData, orderByRule, orderByPropTypes, orderByPtField) }}
+                {% else %}
+                    {# Results content. #}
+                    {{ tools.resultsContent(category, resultData, orderByRule, orderByPropTypes, orderByPtField) }}
+                {% endif %}
 
                 <div id="IDX-resultsFooter" class="IDX-contentFooter">
                     {# Bottom pager. #}
                     <div id="IDX-resultsPager-footer" class="IDX-row-content IDX-center">
-                      
+                        {# Use spaceless to remove gap between divs. #}
+                        {% spaceless %}
+                        <div class="IDX-pagination-action">
+                            <a href="#" class="IDX-btn IDX-btn-default {% if pager.currentPage == 1 %}IDX-disabled{% endif %}" {% if pager.currentPage == 1 %}disabled{% endif %} role="button" id="IDX-pagination-footer-prev"></a>
+                        </div>
+                        <div id="IDX-pagination" class="IDX-pagination-action">
+                            <select id="IDX-pagination-pagers-footer" class="IDX-select" name="pagination" autocomplete="off">
+                                {% if pager.lastPage == 0 %}
+                                    <option value="0" selected>0 / 0</option>
+                                {% else %}
+                                    {% for i in range(1, pager.lastPage)  %}
+                                        <option value="{{ i }}" {% if pager.currentPage == i %}selected{% endif %}>
+                                            {{ i }} / {{ pager.lastPage }}
+                                        </option>
+                                    {% endfor %}
+                                {% endif %}
+                            </select>
+                        </div>
+                        <div class="IDX-pagination-action" >
+                            <a href="#" class="IDX-btn IDX-btn-default{% if pager.currentPage == pager.lastPage %} IDX-disabled{% endif %}"
+                            {% if pager.currentPage == pager.lastPage %}disabled{% endif %}
+                            role="button" id="IDX-pagination-footer-next"></a>
+                        </div>
+                        {% endspaceless %}
+                    </div>
                 </div>
-       
+                <div id="IDX-resultsMLSRights">
+                    {% include 'multipleMlsDisclaimers-1.000.twig' %}
+                </div>
             </div>
         </div>
     {% endspaceless %}
@@ -240,7 +418,7 @@
                 {% set prevLikeMlsPtID = '' %}
 
                 {# Loop through each listing. #}
-                <div class="IDX-resultsCellsContainer" style="overflow-y:auto; height:800px;">
+                <div class="IDX-resultsCellsContainer">
                 {% for listing in data %}
                     {# If supplemental listing and client has mulstiple mlss, user likeParentPtID to figure out the property type. #}
                     {% if listing.idxID == 'a999' and orderByPtField == 'parentPtID' %}
@@ -278,6 +456,15 @@
                         <div class="IDX-cellInnerWrapper">
                             <div class="IDX-row-content">
                                 <!-- Content row. -->
+                                {# Display the primary photo. #}
+                                <div class="IDX-resultsPhoto">
+                                    <a href="{{ listing.detailsURL }}" class="IDX-resultsPhotoLink">
+                                        <noscript class="IDX-loadImage" data-src="{{ listing.primaryPhoto }}">
+                                            <img alt="{{ listing.address }}, {{ listing.cityName }}, {{ listing.stateAbrv }} {{ listing.zipcode }}" src="{{ listing.primaryPhoto }}" class="IDX-resultsPhotoImg" {% if width %}width="{{ width }}" {% endif %} {% if height %}height="{{ height }}"{% endif %}>
+                                        </noscript>
+                                    </a>
+                                </div>
+
                                 {# Displays the whole address for a listings (will be a link to details page). #}
                                 <div class="IDX-resultsAddress">
                                     <a href="{{ listing.detailsURL }}" class="IDX-resultsAddressLink">
@@ -296,14 +483,6 @@
                                         <span class="IDX-resultsAddressStateAbrv">{{ listing.stateAbrv }} </span>
                                         <span class="IDX-resultsAddressZip">{{ listing.zipcode }}</span>
                                         {% if listing.zip4 > 0 %}<span class="IDX-addressZip4">-{{ listing.zip4 }}</span>{% endif %}
-                                    </a>
-                                </div>
-                                {# Display the primary photo. #}
-                                <div class="IDX-resultsPhoto">
-                                    <a href="{{ listing.detailsURL }}" class="IDX-resultsPhotoLink">
-                                        <noscript class="IDX-loadImage" data-src="{{ listing.primaryPhoto }}">
-                                            <img alt="{{ listing.address }}, {{ listing.cityName }}, {{ listing.stateAbrv }} {{ listing.zipcode }}" src="{{ listing.primaryPhoto }}" class="IDX-resultsPhotoImg" {% if width %}width="{{ width }}" {% endif %} {% if height %}height="{{ height }}"{% endif %}>
-                                        </noscript>
                                     </a>
                                 </div>
                                 <div class="IDX-resultsMainInfo IDX-panel IDX-panel-default">
@@ -356,6 +535,14 @@
                                         {% endspaceless %}
                                     </div>
                                 </div>
+                                {# Property remarks. #}
+                                <div class="IDX-resultsDescription">{{ listing.remarksConcat|raw }}</div>
+                                {# MLS logo and courtesy. #}
+                                <div class="IDX-mlsContainer">
+                                    <div class="IDX-MLSLogo">{{ listing.logo|raw }}</div>
+                                    <div class="IDX-MLSCourtesy">{{ listing.courtesy|raw }}</div>
+                                </div>
+
                                 {# Photogallery, vt, oh, saveProperty, detailsLink. #}
                                 <div class="IDX-row-content">
                                     <div class="IDX-resultsCellActions">
@@ -451,13 +638,6 @@
                                                 View Details
                                             </a>
                                         </div>
-                                         {# Property remarks. #}
-                                <div class="IDX-resultsDescription">{{ listing.remarksConcat|raw }}</div>
-                                {# MLS logo and courtesy. #}
-                                <div class="IDX-mlsContainer">
-                                    <div class="IDX-MLSLogo">{{ listing.logo|raw }}</div>
-                                    <div class="IDX-MLSCourtesy">{{ listing.courtesy|raw }}</div>
-                                </div>
                                     </div>
                                 </div>
                             </div>
@@ -484,19 +664,3 @@
         </a>
     </li>
 {% endmacro %}
-{# Results map. #}
-                   
-{# New map pins+clusters. #}
-{% include 'leaflet-1.001.twig' %}
-
-{# Results content. #}
-{{ tools.resultsContent(category, resultData, orderByRule, orderByPropTypes, orderByPtField) }}
-
-<div id="IDX-custom-resultsMap">
-                        <div id="IDX-map"></div>
-                    </div>
-                    
-
-                    {% include 'multipleMlsDisclaimers-1.000.twig' %}
-
-
