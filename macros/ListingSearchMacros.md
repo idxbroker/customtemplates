@@ -2,6 +2,14 @@
 
 These macros are for the default Listing ID template.
 
+Assumes the following imports are in place
+
+{% import "forms-1.001.twig" as form %}
+
+{% import "searchTools-1.001.twig" as tools %}
+
+As these may be referenced by macros below.
+
 Logical twig elements such as ```{% if not middleware %}``` are not included as they do not return html elements. Nor are block definitions or spacesless.
 
 
