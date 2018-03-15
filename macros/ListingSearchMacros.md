@@ -1,4 +1,4 @@
-# Listing ID search Macros
+# Listing ID Search Macros
 
 These macros are for the default Listing ID template.
 
@@ -10,7 +10,7 @@ Assumes the following imports are in place
 
 As these may be referenced by macros below.
 
-Logical twig elements such as ```{% if not middleware %}``` are not included as they do not return html elements. Nor are block definitions or spacesless.
+Logical twig elements such as ```{% if not middleware %}``` are not included as they do not return html elements. Nor are block definitions or spacesless. Nor are inline macros as they are self describing.
 
 
 | Macro        | Creates           
