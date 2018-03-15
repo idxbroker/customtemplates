@@ -32,6 +32,17 @@ What is Twig?
 >This offering is still in alpha stage and will be evolving.
 Feed back welcome.
 
+## Samples and definitions
+
+In this repo you will find macro definitions in the macros folder. These are macros and the resulting text or html produced by the macro.
+
+These may require twig file imports and will be noted.
+
+Macros like  {{ value }} from a loop are not defined.
+
+Macros the Set a value or macros the are used to check if a setting is populated are also not defined.
+
+Pull requests welcome for any definitions missed or you feel should be added.
 
 ## Helpful Links
 [Twig](http://twig.sensiolabs.org/)
