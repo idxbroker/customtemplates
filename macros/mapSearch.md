@@ -23,8 +23,3 @@ Logical twig elements such as ```{% if not middleware %}``` are not included as 
 |{{ cdn.make('/graphical/css/mobileFirst.css') }}|//staticos.idxsandbox.com/graphical/css/mobileFirst.css
 |{{ searchURL }}|https://testDomain.idxbroker.com/idx/map/mapsearch
 |{{ defaultPriceData&#124;raw }}|```{"all":{"min":{"8":"200000","5":"200000","4":"200000","2":"200000","3":"200000","1":"200000","all":"200000"},"max":{"8":"800000","5":"800000","4":"800000","2":"800000","3":"800000","1":"800000","all":"800000"}},"a175":{"min":{"1":"200000","2":"200000","3":"200000","4":"200000","5":"200000","6":"200000","7":"200000","all":"200000"},"max":{"1":"800000","2":"800000","3":"800000","4":"800000","5":"800000","6":"800000","7":"800000","all":"800000"}}}```
-|test|testing
-|test|testing
-|test|testing
-|test|testing
-|test|testing
