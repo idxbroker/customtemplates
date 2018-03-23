@@ -47,11 +47,13 @@ Pull requests welcome for any definitions missed or you feel should be added.
 ### Finding more
 You can print out all keys in a macro using a for loop. Example below prints out all keys in the listings macro.
 
-```<ul>
+```
+<ul>
     {% for key in listing|keys %}
         <li>{{ key }}</li>
     {% endfor %}
-</ul>```
+</ul>
+```
 
 
 ## Helpful Links
