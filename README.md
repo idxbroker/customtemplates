@@ -44,5 +44,15 @@ Macros the Set a value or macros the are used to check if a setting is populated
 
 Pull requests welcome for any definitions missed or you feel should be added.
 
+### Finding more
+You can print out all keys in a macro using a for loop. Example below prints out all keys in the listings macro.
+
+```<ul>
+    {% for key in listing|keys %}
+        <li>{{ key }}</li>
+    {% endfor %}
+</ul>```
+
+
 ## Helpful Links
 [Twig](http://twig.sensiolabs.org/)
