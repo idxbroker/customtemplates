@@ -25,6 +25,7 @@ What is Twig?
 * Currently there is no way to restrict a client for getting your template should you offer and removing the template if they leave your dev code.
 * Versioning is not completely supported at this time. This is very new and this likely going to prove something we need to re think and work out.
 * IDX Broker will not be involved in any disputes over templates.
+* To preview a template you have customized in the editor the template must be applied to your DEMO account. This account must have https enabled.
 
 
 
