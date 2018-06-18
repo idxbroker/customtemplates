@@ -20,7 +20,7 @@ What is Twig?
 * This is for IDX Broker Partners ONLY. Clients will not be allowed to create templates.
 * Because we are not writing these templates, IDX Broker will not be supporting them.
 * There is no way of removing a template if a client leaves your dev code.
-* Courtesies must match standard IDX templates.
+* MLS Disclaimers & Courtesies must match standard IDX templates.
 * Versioning is not completely supported at this time.
 * Currently there is no way to restrict a client from getting your template should you publish it.
 * IDX Broker will not be involved in any disputes over templates.
