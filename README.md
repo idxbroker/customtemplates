@@ -16,7 +16,6 @@ What is Twig?
 ----
 
 ### Requirements and things to remember
-
 * This is for IDX Broker Partners ONLY. Clients will not be allowed to create templates.
 * Because we are not writing these templates, IDX Broker will not be supporting them.
 * There is no way of removing a template if a client leaves your dev code.
@@ -26,14 +25,10 @@ What is Twig?
 * IDX Broker will not be involved in any disputes over templates.
 * To preview a template you have customized in the editor the template must be applied to your DEMO account. This account must have https enabled.
 
-
-
-
 >This offering is still in alpha stage and will be evolving.
 Feedback welcome.
 
 ## Samples and definitions
-
 In this repo you will find macro definitions in the macros folder. These are macros and the resulting text or html produced by the macro.
 
 These may require twig file imports and will be noted.
@@ -55,6 +50,5 @@ You can print out all keys in a macro using a for loop. Example below prints out
 </ul>
 ```
 
-
-## Helpful Links
+## Helpful Links 
 [Twig](http://twig.sensiolabs.org/)
