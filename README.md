@@ -18,13 +18,11 @@ Many IDX options and data are available via twi variables and marcos.
 
 ### IDX Broker uses Twig for templates
 
-What is Twig?
+What is [Twig](http://twig.sensiolabs.org/)?
 
 > Twig is a modern template engine for PHP. Twig compiles templates down to plain optimized PHP code. The overhead compared to regular PHP code was reduced to the very minimum.
 
-
-
-## Requirements and things to remember
+# Requirements
 
 * This is for IDX Broker Partners ONLY. Clients will not be allowed to create templates.
 * Because IDX Broker is not producing these templates, IDX Broker will not be supporting them.
@@ -33,10 +31,10 @@ What is Twig?
 * Versioning is not completely supported at this time.
 * Currently there is no way to restrict a client under your dev code from getting your template should you publish it.
 * IDX Broker will not be involved in any disputes over templates.
-* To preview a template you have customized in the editor the template must be applied to your DEMO account. This account must have https enabled.
+* HTTPS. To preview a template you have customized in the editor the template must be applied to your DEMO account. This account must have https enabled.
 
 
-## Samples and definitions
+# Samples and Definitions
 
 In this repo you will find macro definitions in the macros folder. These are macros and the resulting text or html produced by the macro.
 
@@ -46,7 +44,8 @@ Macros like  {{ value }} from a loop are not defined.
 
 Macros that set a value or macros the are used to check if a setting is populated are also not defined.
 
-### Finding more
+### Exploring a macro
+
 You can print out all keys in a macro using a for loop. Example below prints out all keys in the listings macro.
 
 ```
@@ -57,5 +56,4 @@ You can print out all keys in a macro using a for loop. Example below prints out
 </ul>
 ```
 
-## Helpful Links 
-[Twig](http://twig.sensiolabs.org/)
+Since many macros are populated by IDX data it is not possible to map a comprehensive list of values.

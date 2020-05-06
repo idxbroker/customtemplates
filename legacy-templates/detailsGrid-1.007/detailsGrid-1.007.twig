@@ -1,0 +1,110 @@
+{# detailsGrid #}
+{% extends "details-1.006.twig" %}
+{% import "detailsTools-1.002.twig" as tools %}
+
+{% block idxDetailsContent %}
+    {# Show the Address #}
+    {{ tools.address }}
+
+    {# Single photo for now #}
+    <div id="IDX-gridLayoutLeft">
+    {{ tools.photo('single') }}
+    </div>
+
+    {# Right side data #}
+    <div id="IDX-gridLayoutRight">
+        {{ tools.price }}
+        {% if idxStatus != 'sold' %}
+            {{ tools.bankRateTool(displayBankRateEstPayment, mortgagePayment) }}
+        {% endif %}
+        {{ tools.displayMortgageCalcLink }}
+        <div id="IDX-gridListingID"><span id="IDX-gridListingLabel">{{ labels.listingID }}:</span> {{ listingID }}</div>
+        <div id="IDX-detailsSummary">
+            {{ _self.summary('pricePerSqFt') }}
+            {{ _self.summary('propStatus') }}
+            {{ _self.summary('soldDate') }}
+            {{ _self.summary('bedrooms','Bed') }}
+            {{ _self.summary('totalBaths','Bath') }}
+            {{ _self.summary('fullBaths','Bath') }}
+            {{ _self.summary('partialBaths','Bath') }}
+            {{ _self.summary('sqFt','Sq Ft') }}
+            {{ _self.summary('acres','Acres') }}
+            {{ _self.summary('subdivision') }}
+            {{ _self.summary('yearBuilt') }}
+
+            {# Virtual Tours #}
+            <div id="IDX-detailsVirtualTourContainer" class="IDX-summaryField">{{ tools.virtualTour }}</div>
+
+            {# Open House #}
+            {{ tools.openHouse('div','IDX-summaryField','IDX-detailsOpenHouseContainer') }}
+        </div>
+    </div>
+
+    {# Share this icons #}
+    <div id="IDX-shareThisBar">
+        {{ tools.shareThis('div','IDX-gridShareThis', {'icons':true}) }}
+    </div>
+
+    {# Other Links #}
+    <div id="IDX-detailsLinkBar">
+        {{ tools.mapLocation('div','IDX-detailsMapLocation IDX-detailsLink') }}
+        <div id="IDX-linkBar-moreInfo" class="IDX-detailsLink">
+            <a class="IDX-detailsLink-moreInfo" href="{{ moreInfoLink }}">More Info</a>
+        </div>
+
+        {% if idxStatus == 'active' %}
+        <div id="IDX-linkBar-scheduleShowing" class="IDX-detailsLink">
+            <a class="IDX-detailsLink-scheduleShowing" href="{{ scheduleShowingLink }}">Schedule a Showing</a>
+        </div>
+        {% endif %}
+
+        <div id="IDX-linkBar-printable" class="IDX-detailsLink">
+            <a target="_blank" class="IDX-detailsLink-printable" href="?printable=1">Printable Flyer</a>
+        </div>
+
+        {% if customLink.url and customLink.text %}
+            <div id="IDX-linkBar-customLink" class="IDX-detailsLink">
+                <a class="IDX-detailsLink-customLink" href="{{ customLink.url }}" target="_blank">{{ customLink.text }}</a>
+            </div>
+        {% endif %}
+    </div>
+
+    {# remarks #}
+    <p id="IDX-detailsDescription">{{ tools.remarks }}</p>
+
+
+{% endblock %}
+
+{# All the links have generally the same html, so put them into this macro for easy updating #}
+{% macro summary(name,append) %}
+{# make sure the field is included in the context data #}
+{%- if attribute(_context,name) is defined -%}
+
+    {%- set data = attribute(_context,name) -%}
+
+    {%- if clientRules.showEmptyDetailData == 'n' and (data is empty or data == '0.00') -%}
+        {# do nothing - they have disabled the display of empty data and there's no data #}
+    {%- else -%}
+        {%- if isArray(data) -%}
+            {%- set data = data|join(', ') -%}
+        {%- endif -%}
+
+        {%- if name == 'pricePerSqFt' -%}
+            {%- set data = '$' ~ data|number_format(2) -%}
+        {%- endif -%}
+
+        {%- if name == 'soldDate' -%}
+            {%- set data = data|date('n/d/Y') -%}
+        {%- endif -%}
+
+        {% set id = 'IDX-summaryField-' ~ name %}
+        <div id="{{ id }}" class="IDX-summaryField{% if isNumeric(data) and data == 0 or isEmpty(data) %} IDX-zero{% endif %}">
+            <span id="{{ id }}-label" class="IDX-summaryFieldLabel">{{ attribute(labels,name) }}:</span>
+            <span id="{{ id }}-data" class="IDX-summaryFieldData">{{ data }} </span>
+            {% if append %}
+            <span id="{{ id }}-append" class="IDX-summaryFieldAppend">{{ append }}</span>
+            {% endif %}
+        </div>
+    {%- endif -%}
+{%- endif -%}
+{% endmacro %}

@@ -1,0 +1,298 @@
+/* some basic layout/hide/display things */
+#IDX-photoGalleryCount {
+  display: none;
+}
+.IDX-detailsAddressState {
+  display: none;
+}
+.IDX-detailsEndAddressComma {
+  display: none;
+}
+.IDX-detailsAddressStateAbrv {
+  display: inline;
+}
+/* media links */
+#IDX-listingMediaLinks {
+  padding: 0;
+  margin: 0 0 3px;
+}
+#IDX-listingMediaLinks li {
+  display: inline-block;
+  margin-right: 18px;
+}
+#IDX-listingMediaLinks li a,
+#IDX-modernActions a {
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: -0.01em;
+  line-height: 15px;
+}
+/* layout */
+.IDX-modernColumn {
+  float: left;
+  position: relative;
+}
+#IDX-modernLeft {
+  height: 450px;
+  width: 48%;
+}
+#IDX-detailsPropertyPhoto {
+  height: 290px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+#IDX-primaryImg {
+  height: 140%;
+  left: -20%;
+  position: absolute;
+  top: -20%;
+  max-width:none;
+}
+.IDX-detailsAddressInfo {
+  color: #666666;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 18px;
+  padding: 3px 0px 0px 0px;
+}
+.IDX-detailsAddressLocationInfo,#IDX-detailsListingID {
+  color: #808080;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 14px;
+clear:both;
+}
+
+#IDX-price {
+  color: #cc8753;
+  float:left;
+  font-size: 27px;
+  font-weight: bold;
+  line-height: 27px;
+  margin-top: 2px;
+}
+#IDX-price-label {
+    font-size: 11px;
+    font-style: italic;
+    line-height: 14px;
+    margin: 5px 0 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=65)";
+    filter: alpha(opacity=65);
+    opacity: 0.65;
+    display: none;
+}
+#IDX-price.IDX-archive #IDX-price-label {
+	display: inline;
+}
+
+.IDX-modernShareThis {
+  float: right;
+  padding: 7px 0;
+  vertical-align: bottom;
+}
+.IDX-modernShareThis .stButton { margin: 0px 1px; }
+.IDX-modernShareThis .stButton .chicklets {
+  width: 16px;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+#IDX-detailsBankRateTool {
+  width: 100%;
+  float: left;
+}
+
+#IDX-detailsBankRateTool:after {
+  clear: both;
+}
+
+#IDX-detailsSpecs {
+  bottom: 0;
+  position: absolute;
+}
+#IDX-detailsSpecs .IDX-detailsSpecBox {
+  display: inline-block;
+  margin: 0 5px;
+  text-align: center;
+}
+#IDX-detailsSpecs .IDX-detailsSpecText {
+  display: block;
+  font-size: 19px;
+  font-weight: bold;
+  line-height: 12px;
+  color: #cc8753;
+}
+#IDX-detailsSpecs .IDX-detailsSpecLabel {
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 12px;
+  color: #808080;
+}
+#IDX-fullBaths + #IDX-totalBaths {
+  display: none;
+}
+#IDX-modernRight {
+  width: 52%;
+}
+#IDX-modernRight .IDX-modernImg {
+  height: 120%;
+  min-height: auto;
+  min-width: auto;
+  width: auto;
+  position: absolute;
+  max-width:none;
+}
+.IDX-modernPhoto {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding-left: 10px;
+  position: relative;
+  float: left;
+}
+#IDX-modernPhoto-2 {
+  height: 155px;
+  left: 0;
+  top: 0;
+  width: 51%;
+}
+#IDX-modernPhoto-3 {
+  height: 155px;
+  right: 0;
+  width: 49%;
+  top: 0;
+}
+#IDX-modernPhoto-4 {
+  height: 240px;
+  left: 0;
+  top: 10px;
+  width: 63%;
+}
+#IDX-modernPhoto-5 {
+  height: 240px;
+  right: 0;
+  top: 10px;
+  width: 37%;
+}
+.IDX-modernImgWrap {
+  bottom: 0;
+  left: 10px;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.IDX-imgShadow {
+  background: -moz-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 66%, rgba(0, 0, 0, 0.15) 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(66%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0.15)));
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 66%, rgba(0, 0, 0, 0.15) 100%);
+  background: -o-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 66%, rgba(0, 0, 0, 0.15) 100%);
+  background: -ms-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 66%, rgba(0, 0, 0, 0.15) 100%);
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 66%, rgba(0, 0, 0, 0.15) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#59000000', GradientType=1);
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+#IDX-modernImg-2 {
+  left: -10%;
+  top: -10%;
+}
+#IDX-modernImg-3 {
+  left: -15%;
+  top: -10%;
+}
+#IDX-modernImg-4 {
+  left: -25%;
+  top: -10%;
+}
+#IDX-modernImg-5 {
+  left: -65%;
+  top: -10%;
+}
+/* actions */
+#IDX-modernActions {
+  clear: both;
+  float: right;
+  height: 40px;
+  position: relative;
+  margin-top: 15px;
+  line-height: 18px;
+}
+#IDX-modernActions a {
+  margin-left: 15px;
+}
+/* tabs */
+#IDX-tabs {
+  clear: both;
+}
+.IDX-fieldContainerList {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  padding: 10px;
+  width: 50%;
+}
+.IDX-fieldContainerList > div {
+  clear: both;
+  font-size: 12px;
+  line-height: 18px;
+  margin-bottom: 5px;
+  *zoom: 1;
+}
+.IDX-fieldContainerList > div:before,
+.IDX-fieldContainerList > div:after {
+  display: table;
+  content: "";
+}
+.IDX-fieldContainerList > div:after {
+  clear: both;
+}
+.IDX-fieldContainerList > div > strong {
+  float: left;
+  font-weight: normal;
+  text-align: right;
+  width: 45%;
+  color: #666666;
+}
+.IDX-fieldData {
+  float: right;
+  text-align: left;
+  width: 53%;
+  color: #262626;
+}
+#IDX-detailsTopNav {
+  min-height: 16px;
+}
+#IDX-nextLastButtons { float: left; }
+#IDX-detailsTopLinks { text-align: right; padding-top:16px; }
+#IDX-details-row-content { clear: right; }
+
+/* featured agent */
+#IDX-detailsAgentInfoWrapper {
+position: relative;
+clear: left;
+width: 46%;
+padding:1%;
+-webkit-border-radius: 15px;
+-moz-border-radius: 15px;
+border-radius: 15px;
+border:1px solid #999999;
+background:rgba(201,201,201,0.4);
+-webkit-box-shadow: #B3B3B3 2px 2px 2px;
+-moz-box-shadow: #B3B3B3 2px 2px 2px;
+ box-shadow: #B3B3B3 2px 2px 2px;
+}
+#IDX-detailsAgentInfo { background-color: none; opacity: 1.00; margin: 0px; }
+#IDX-detailsAgentInfo img { -webkit-border-radius: 15px;
+-moz-border-radius: 15px;
+border-radius: 15px;
+}
+#IDX-detailsAgentText { padding-top: 2px; }
