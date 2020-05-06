@@ -116,7 +116,7 @@
             	var path = window.location.pathname.split('/');
                 var address = path[6].replace("-", "+");
                                
-                axios.get('https://maps.googleapis.com/maps/api/geocode/json?address='+address+'+&key=AIzaSyCWiSKCiaA-Wu95I7Jbwmutu5IXBLwL8hM')
+                axios.get('https://maps.googleapis.com/maps/api/geocode/json?address='+address+'+&key=ADDYOURKEYHERE')
   					.then(function (response) {
                     
                     	//radius search variables
