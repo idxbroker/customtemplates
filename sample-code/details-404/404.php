@@ -61,7 +61,7 @@
 
             {% if missingProperty %}
             
-             {# Start: This section handels the logic for a 404 page #}
+             {# Start: This section handles the logic for a 404 page #}
             <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
             <h1>404</h1>
              <h1>Oh No! We can't find that property.</h1>
@@ -160,7 +160,7 @@
               }
               </style>
                 
-             {# end: This section handels the logic for a 404 page #}
+             {# end: This section handles the logic for a 404 page #}
                             
                    
                    
