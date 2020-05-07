@@ -1,0 +1,469 @@
+/* 1.005 */
+@charset "UTF-8";
+.IDX-wrapper-standard .leaflet-control-layers-selector {
+    display: inline;
+}
+.IDX-wrapper-standard .leaflet-draw-inner-toolbar,
+.IDX-wrapper-standard #disabledMap {
+    background: none repeat scroll 0 0 rgba(255, 255, 255, 0.6);
+    bottom: 0;
+    display: none;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+}
+.IDX-wrapper-standard .leaflet-draw-actions a {
+    color: #892121;
+}
+.IDX-wrapper-standard .IDX-hide,
+.IDX-wrapper-standard .IDX-hidden {
+    display: none;
+}
+.IDX-wrapper-standard .IDX-errorField {
+    border: 2px solid #FF0000;
+}
+.IDX-wrapper-standard label.IDX-label-for-nojs {
+    display: none;
+}
+.IDX-wrapper-standard #IDX-formReset,
+.IDX-wrapper-standard #IDX-resetBtn,
+.IDX-wrapper-standard #IDX-formReset-bottom {
+    background: #fff;
+    border: 1px solid #ccc;
+}
+.IDX-wrapper-standard .IDX-arrow {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-radius: 0;
+    border-color: #ccc;
+    background-color: #fff;
+    background-image: none;
+    border: none;
+    background: transparent;
+    width: 22px;
+    height: 100%;
+}
+.IDX-wrapper-standard .IDX-arrow b {
+    background: none;
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    margin-top: -25%;
+    width: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #000;
+}
+.IDX-wrapper-standard .IDX-arrow b > span {
+    margin: 4px 0 0 6px;
+}
+.IDX-wrapper-standard .IDX-dropdown-open .IDX-arrow b {
+    background: none;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #000;
+    border-top: none;
+}
+.IDX-wrapper-standard .IDX-center {
+    margin: 0 auto;
+    text-align: center;
+}
+.IDX-wrapper-standard .IDX-center:after {
+    clear: both;
+    text-align: inherit;
+}
+.IDX-wrapper-standard .IDX-message {
+    margin: 5px auto;
+    padding: 5px;
+}
+.IDX-wrapper-standard .IDX-bioPhoto img {
+    max-width: 100%;
+}
+.IDX-wrapper-standard #IDX-resultspager {
+    height: 35px;
+}
+.IDX-wrapper-standard .IDX-pagination-action {
+    display: inline-block;
+    border: 0;
+    width: 20%;
+    vertical-align: top;
+}
+.IDX-wrapper-standard .IDX-pagination-action a,
+.IDX-wrapper-standard .IDX-pagination-action select {
+    width: 100%;
+    height: 38px;
+    min-height: inherit;
+}
+.IDX-wrapper-standard #IDX-pagination {
+    width: 60%;
+}
+.IDX-wrapper-standard #IDX-pagination-header-prev:before,
+.IDX-wrapper-standard #IDX-pagination-footer-prev:before {
+    content: '<<';
+}
+.IDX-wrapper-standard #IDX-pagination-header-next:before,
+.IDX-wrapper-standard #IDX-pagination-footer-next:before {
+    content: '>>';
+}
+.IDX-wrapper-standard #IDX-pagination-header-prev:after,
+.IDX-wrapper-standard #IDX-pagination-header-next:after,
+.IDX-wrapper-standard #IDX-pagination-footer-prev:after,
+.IDX-wrapper-standard #IDX-pagination-footer-next:after {
+    clear: both;
+}
+.IDX-wrapper-standard #IDX-pagination-pagers {
+    -webkit-appearance: none;
+    padding: 0 5px;
+}
+.IDX-wrapper-standard .IDX-topActions {
+    text-align: center;
+}
+.IDX-wrapper-standard .IDX-topAction {
+    display: inline-block;
+    width: 100%;
+}
+.IDX-wrapper-standard .IDX-topAction a {
+    width: 100%;
+    padding: 6px 0;
+}
+.IDX-wrapper-standard .IDX-topAction:first-of-type {
+    float: left;
+}
+.IDX-wrapper-standard .IDX-topAction:last-of-type {
+    float: right;
+}
+.IDX-wrapper-standard #IDX-saveSearch,
+.IDX-wrapper-standard #IDX-newSearch,
+.IDX-wrapper-standard #IDX-refineSearchFormToggle {
+    background-color: #e6e6e6;
+    color: #555;
+}
+.IDX-wrapper-standard #IDX-saveSearch:hover,
+.IDX-wrapper-standard #IDX-newSearch:hover,
+.IDX-wrapper-standard #IDX-refineSearchFormToggle:hover {
+    background-color: #d6d6d6;
+}
+.IDX-wrapper-standard #IDX-resultsRefineSearchToggle {
+    margin-bottom: 0;
+}
+.IDX-wrapper-standard #IDX-resultsRefineSearchToggle button {
+    position: relative;
+    width: 100%;
+}
+.IDX-wrapper-standard #IDX-resultsRefineSearchWrap {
+    padding: 15px;
+    background-color: #f7f7f7;
+    margin-bottom: 10px;
+    display: none;
+}
+.IDX-wrapper-standard #IDX-resultsRefineSubmit {
+    width: 100%;
+}
+.IDX-wrapper-standard #IDX-resultsTabActions {
+    margin-bottom: 10px;
+}
+.IDX-wrapper-standard #IDX-resultsTabActions a.IDX-btn {
+    width: 50%;
+}
+.IDX-wrapper-standard #IDX-resultsMap {
+    width: 100%;
+    height: 500px;
+    min-height: 300px;
+    box-sizing: border-box;
+}
+.IDX-wrapper-standard #IDX-map {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.IDX-wrapper-standard #IDX-resultsMapListings {
+    display: none;
+    visibility: hidden;
+    position: relative;
+}
+.IDX-wrapper-standard .IDX-resultsCell {
+    border-bottom: 2px solid #727272;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+.IDX-wrapper-standard .IDX-resultsMainInfo.IDX-panel-default {
+    box-shadow: none;
+}
+.IDX-wrapper-standard .IDX-label:after {
+    content: ":";
+    padding-right: 5px;
+}
+.IDX-wrapper-standard .IDX-field {
+    display: inline-block;
+    width: 100%;
+}
+.IDX-wrapper-standard .IDX-text {
+    display: inline-block;
+}
+.IDX-wrapper-standard .IDX-resultsText {
+    text-transform: capitalize;
+}
+.IDX-wrapper-standard .IDX-resultsAddress {
+    margin: 10px 0;
+}
+.IDX-wrapper-standard .IDX-resultsAddress a {
+    display: inline-block;
+    width: 100%;
+}
+.IDX-wrapper-standard .IDX-resultsAddressUnitNumber:before {
+    content: ' #';
+}
+.IDX-wrapper-standard .IDX-resultsMainInfoLeft,
+.IDX-wrapper-standard .IDX-resultsMainInfoRight {
+    width: 100%;
+}
+.IDX-wrapper-standard .IDX-resultsPhoto {
+    text-align: center;
+}
+.IDX-wrapper-standard .IDX-resultsPhotoImg {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+}
+.IDX-wrapper-standard .IDX-resultsAddressState {
+    display: none;
+}
+.IDX-wrapper-standard .IDX-resultsCellAction {
+    width: 100%;
+}
+.IDX-wrapper-standard .IDX-resultsCellSaved {
+    color: #119111;
+}
+.IDX-wrapper-standard #IDX-idxbroker {
+    display: block;
+    visibility: visible;
+    text-align: center;
+    padding: 15px 0 10px 0;
+}
+.IDX-wrapper-standard #IDX-resultsMLSRights {
+    display: block;
+    visibility: visible;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    padding: 10px;
+}
+.IDX-wrapper-standard #IDX-loadingScreen {
+    display: none;
+    text-align: center;
+}
+.IDX-wrapper-standard #IDX-loadingScreen img {
+    display: block;
+    margin: 0 auto;
+}
+.IDX-wrapper-standard .IDX-controls {
+    min-height: 40px;
+}
+.IDX-wrapper-standard .IDX-controls .IDX-input {
+    width: 100%;
+}
+.IDX-wrapper-standard .IDX-controls input[type=text],
+.IDX-wrapper-standard .IDX-controls input[type=number],
+.IDX-wrapper-standard .IDX-controls input[type=submit] {
+    padding: 5px;
+    width: 100%;
+    margin: 0;
+}
+.IDX-wrapper-standard .IDX-row-content {
+    width: 100%;
+    display: inline-block;
+}
+.IDX-wrapper-standard .IDX-control-group {
+    display: inline-block;
+    width: 100%;
+    min-height: 35px;
+    margin: 0 0 15px 0;
+}
+.IDX-wrapper-standard .IDX-MLSLogo {
+    display: block;
+    float: right;
+    margin-left: 15px;
+}
+.IDX-wrapper-standard .IDX-MLSLogo:after {
+    clear: both;
+}
+.IDX-wrapper-standard .IDX-MLSCourtesy {
+    display: block;
+    visibility: visible;
+    position: relative;
+    float: right;
+}
+.IDX-wrapper-standard .IDX-hopoZoning {
+    display: none !important;
+    visibility: hidden !important;
+}
+.IDX-wrapper-standard .IDX-half {
+    width: 50%;
+    display: inline-block;
+}
+.IDX-openHouseTime:before {
+    content: " ";
+}
+.IDX-openHouseHostedBy:before {
+    content: "Hosted By: ";
+}
+.IDX-propertyTypeHeader {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+.IDX-wrapper-standard .select2-container .select2-choice .select2-arrow b,
+.IDX-wrapper-standard .IDX-arrow b {
+    right: 8px;
+    margin-top: -15%;
+    border-top: 6px solid #555;
+    border-right: 6px solid transparent;
+    border-left: 5px solid transparent;
+}
+.IDX-wrapper-standard .IDX-dropdown-open .IDX-arrow b {
+    right: 8px;
+    margin-top: -15%;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid #555;
+}
+@media only screen and (min-width: 641px) {
+    .IDX-wrapper-standard #IDX-search-property-content .IDX-control-group:nth-of-type(odd),
+    .IDX-wrapper-standard #IDX-search-primary-content .IDX-control-group:nth-of-type(odd),
+    .IDX-wrapper-standard #IDX-search-additional-content .IDX-control-group:nth-of-type(odd) {
+        border-right: 1px solid #fff;
+    }
+    .IDX-wrapper-standard .IDX-topAction {
+        width: 30%;
+    }
+    .IDX-wrapper-standard #IDX-resultsRefineSearchToggle {
+        display: none;
+    }
+    .IDX-wrapper-standard #IDX-resultsRefineSearchWrap {
+        display: block;
+    }
+    .IDX-wrapper-standard #IDX-resultsRefineSearchWrap .IDX-control-group {
+        width: 48%;
+    }
+    .IDX-wrapper-standard #IDX-resultsRefineSearchWrap .IDX-control-group:nth-of-type(2n) {
+        margin-left: 4%;
+    }
+    .IDX-wrapper-standard #IDX-resultsRefineSearchWrap .IDX-control-group:nth-of-type(2n+1) {
+        /*margin-left: 3%;*/
+    }
+    .IDX-wrapper-standard #IDX-resultsTabActions {
+        display: none;
+    }
+    .IDX-wrapper-standard #IDX-resultsMapListings {
+        width: 30%;
+        visibility: visible;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 500px;
+        background-color: #fff;
+        overflow-y: scroll;
+    }
+    .IDX-wrapper-standard .IDX-resultsMapListingPhotoImg {
+        width: 100%;
+        max-width: 160px;
+        height: auto;
+    }
+    .IDX-wrapper-standard .IDX-resultsMapListing {
+        border-bottom: 1px solid #727272;
+        padding-bottom: 15px;
+        min-width: 250px;
+        margin-top: 0;
+    }
+    .IDX-wrapper-standard .IDX-resultsMapListingLabel:after {
+        content: ':';
+    }
+    .IDX-wrapper-standard .IDX-resultsPhoto {
+        width: 90%;
+        text-align: inherit;
+        display: inline-block;
+        position: relative;
+        float: left;
+    }
+    .IDX-wrapper-standard .IDX-resultsAddress {
+        font-size: x-large;
+        width: 75%;
+        display: inline-block;
+        vertical-align: top;
+        padding-left: 20px;
+    }
+    .IDX-wrapper-standard .IDX-resultsMainInfo.IDX-panel-default {
+        padding-left: 20px;
+        display: inline-block;
+        width: 75%;
+        margin-top: 10px;
+        border: none;
+        float: left;
+    }
+    .IDX-wrapper-standard .IDX-resultsMainInfo.IDX-panel-default > .IDX-panel-heading {
+        padding: 0;
+        background-color: inherit;
+        border: none;
+        vertical-align: top;
+        display: inline-block;
+        width: 40%;
+        float: right;
+    }
+    .IDX-wrapper-standard .IDX-resultsMainInfo.IDX-panel-default > .IDX-panel-body {
+        padding: 0;
+        width: 60%;
+        display: inline-block;
+        float: left;
+    }
+    .IDX-wrapper-standard .IDX-panel-body .IDX-resultsField {
+        margin-bottom: 5px;
+    }
+    .IDX-wrapper-standard .IDX-resultsMainInfoLeft,
+    .IDX-wrapper-standard .IDX-resultsMainInfoRight {
+        display: inline-block;
+        float: left;
+    }
+    .IDX-wrapper-standard .IDX-resultsDescription {
+        display: inline-block;
+        width: 100%;
+        margin-top: 10px;
+    }
+    .IDX-wrapper-standard .IDX-resultsCellActions {
+        display: inline-block;
+        float: right;
+    }
+    .IDX-wrapper-standard .IDX-resultsPhotogallery,
+    .IDX-wrapper-standard .IDX-resultsVirtualTour,
+    .IDX-wrapper-standard .IDX-resultsOpenHouse,
+    .IDX-wrapper-standard .IDX-resultsCustomLink,
+    .IDX-wrapper-standard .IDX-resultsSaveProperty,
+    .IDX-wrapper-standard .IDX-resultsDetailsLink {
+        display: inline-block;
+        display: inline-block;
+    }
+    .IDX-wrapper-standard .IDX-resultsCellAction {
+        float: left;
+    }
+
+
+#IDX-resultsContent {
+	width:40%;
+	float: left;
+}
+#IDX-custom-resultsMap {
+    float: left;
+    width:60%;
+    height: 800px;
+}
+
+span.IDX-resultsAddressLatLng {
+    display: none;
+}
+span.IDX-resultsAddressLatLng {
+    display: none;
+	}

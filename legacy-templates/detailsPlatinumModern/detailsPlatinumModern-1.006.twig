@@ -1,0 +1,71 @@
+{# detailsPlatinumModern #}
+{% extends "details-1.005.twig" %}
+{% import "detailsTools-1.001.twig" as tools %}
+
+{% block idxDetailsContent %}
+	<ul id="IDX-listingMediaLinks">
+		<li>{{ tools.virtualTour }}</li>
+		{% if imageData.totalCount > 0 %}
+		<li><a href="{{ photoGalleryLink }}">View Photo Gallery<span id="IDX-photoGalleryCount"> ({{ imageData.totalCount }})</span></a></li>
+		{% endif %}
+	</ul>
+
+	<div id="IDX-modernMain">
+		<div id="IDX-modernLeft" class="IDX-modernColumn">
+			<div id="IDX-detailsPropertyPhoto" class="IDX-modernImage">
+				<img
+					id="IDX-primaryImg"
+					class="IDX-modernImg"
+					src="{{ imageData|first.url }}"
+					alt="Primary Photo for Listing #{{ listingID }}"
+					title="{{ truncate(remarksConcat,100) }}"
+				/>
+			</div>
+			{{ tools.address }}
+
+			<div id="IDX-detailsListingID">{{ labels.listingID }} {{ listingID }}</div>
+			{{ tools.price }}
+			{{ tools.shareThis('div','IDX-modernShareThis',{smallIcons:true}) }}
+			{{ tools.bankRateTool(displayBankRateEstPayment, mortgagePayment) }}
+			{{ tools.detailSpecs }}
+		</div>
+		<div id="IDX-modernRight" class="IDX-modernColumn">
+			{% for i in 2..5 %}
+				{% if attribute(imageData, i) %}
+					{% set img = attribute(imageData, i) %}
+					<div id="IDX-modernPhoto-{{ i }}" class="IDX-modernPhoto">
+						<div class="IDX-modernImgWrap">
+							<img id="IDX-modernImg-{{ i }}" class="IDX-modernImg" src="{{ img.url }}" alt="Photo {{ i }} for Listing #{{ listingID }}" />
+							<div class="IDX-imgShadow"></div>
+						</div>
+					</div>
+				{% endif %}
+			{% endfor %}
+			<div id="IDX-modernActions">
+				{{ tools.saveProperty }}
+				<a id="IDX-moreInfo" href="{{ moreInfoLink }}">Info Request</a>
+				{% if idxStatus == 'active' %}
+				<a id="IDX-schedule" href="{{ scheduleShowingLink }}">Schedule</a>
+				{% endif %}
+				<a target="_blank" id="IDX-printable" href="?printable=1">Printable</a>
+				{{ tools.displayMortgageCalcLink }}
+				{% if customLink.url and customLink.text %}
+					<a class="IDX-customLink" href="{{ customLink.url }}" target="_blank">{{ customLink.text }}</a>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+
+	{% if featured == 'y' and featuredAgentInfo is not empty %}
+		<div id="IDX-detailsAgentInfoWrapper" class="IDX-clearfix">
+			{% include 'featuredAgent-1.000.twig' %}
+		</div>
+	{% endif %}
+
+	{{ tools.tabs() }}
+
+	<br class="IDX-clear" />
+{% endblock %}
+
+{# this template takes care of the idxDetailsSubContent in the content block #}
+{% block idxDetailsSubContent '' %}

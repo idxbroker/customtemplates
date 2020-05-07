@@ -1,0 +1,844 @@
+/*
+ * Accounts ship with #IDX-main width: 100% as a client css override.
+ * We need to force box-sizing: border-box on that container and all elements
+ * located inside of it.
+ */
+#IDX-main,
+#IDX-main * {
+    box-sizing: border-box;
+}
+.IDX-wrapper-standard #IDX-detailsTopNav,
+.IDX-wrapper-standard #IDX-nextLastButtons {
+    margin-bottom: 10px;
+}
+.IDX-wrapper-standard #IDX-nextLastPosition {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+.IDX-wrapper-standard #IDX-nextLastButtons a {
+    float: left;
+    width: 50%;
+}
+.IDX-wrapper-standard .IDX-topAction a,
+.IDX-wrapper-standard .IDX-detailsHotAction a {
+    width: 100%;
+}
+
+.IDX-wrapper-standard #IDX-saveProperty,
+.IDX-wrapper-standard #IDX-newSearch,
+.IDX-wrapper-standard #IDX-modifySearch{
+    background-color: #e6e6e6;
+    color: #555;
+}
+
+.IDX-wrapper-standard #IDX-saveProperty:hover,
+.IDX-wrapper-standard #IDX-newSearch:hover,
+.IDX-wrapper-standard #IDX-modifySearch:hover,
+.IDX-wrapper-standard #IDX-saveProperty:focus,
+.IDX-wrapper-standard #IDX-newSearch:focus,
+.IDX-wrapper-standard #IDX-modifySearch:focus {
+    background-color: #d6d6d6;
+}
+
+.IDX-wrapper-standard #IDX-detailsHotActions {
+    display: inline-block;
+    width: 100%;
+}
+.IDX-wrapper-standard #IDX-detailsHotAction {
+    margin-bottom: 5px;
+}
+.IDX-wrapper-standard .IDX-detailsshowcaseSlides {
+    display: inline-block;
+    margin-bottom: 10px;
+    height: auto;
+}
+.IDX-wrapper-standard .IDX-showcaseSlide {
+    width: 60px;
+    vertical-align: middle;
+    text-align: center;
+    display: inline-block;
+}
+.IDX-wrapper-standard .IDX-detailsShowcaseImage {
+    max-height: 40px;
+}
+.IDX-wrapper-standard #IDX-primaryPhoto {
+    text-align: center;
+    position: relative;
+}
+.IDX-wrapper-standard #IDX-detailsPrimaryImg {
+    width: auto;
+    max-width: 100%;
+    max-height: 400px;
+}
+.IDX-wrapper-standard .IDX-arrow {
+    position: absolute;
+    top: 50%;
+    margin-top: -18px;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    vertical-align: top;
+    background-color: rgba(0, 0, 0, 0.65);
+    border: 1px solid #ddd;
+    color: #fff;
+    cursor: pointer;
+}
+.IDX-wrapper-standard .IDX-arrow:hover {
+    color: #fff;
+}
+.IDX-wrapper-standard #IDX-arrow-previous {
+    left: 0;
+    display: none;
+}
+.IDX-wrapper-standard #IDX-arrow-next {
+    right: 0;
+    display: none;
+}
+.IDX-wrapper-standard #IDX-primaryPhoto a.IDX-thumbnail {
+    cursor: default;
+}
+.IDX-wrapper-standard .IDX-showcaseSlideAction.IDX-thumbnail {
+    margin-bottom: 0;
+}
+.IDX-wrapper-standard #IDX-detailsGalleryAction {
+    margin-bottom: 10px;
+}
+.IDX-wrapper-standard #IDX-photoGalleryLink {
+    width: 100%;
+}
+.IDX-wrapper-standard .IDX-showcaseSlide-active {
+    border: 1px solid #0034FF;
+}
+.IDX-wrapper-standard #IDX-detailsAddress {
+    display: inline-block;
+    margin: 10px 0;
+}
+.IDX-wrapper-standard #IDX-detailsAddress div {
+    display: inline-block;
+}
+.IDX-wrapper-standard .IDX-label:after {
+    content: ":";
+    padding-right: 5px;
+}
+.IDX-wrapper-standard .IDX-field {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 5px;
+}
+.IDX-wrapper-standard .IDX-text {
+    display: inline-block;
+}
+.IDX-wrapper-standard .IDX-panel-collapse-toggle {
+    display: inline-block;
+    width: 100%;
+}
+.IDX-wrapper-standard .IDX-panel-collapse-toggle span {
+    float: right;
+    width: 20px;
+    height: 15px;
+    background: url("/images/frontEnd_sprite_16.png") -45px -20px no-repeat;
+}
+.IDX-wrapper-standard .IDX-panel-collapse-toggle.IDX-collapsed span {
+    background: url("/images/frontEnd_sprite_16.png") -45px -20px no-repeat;
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.IDX-wrapper-standard .IDX-panel-heading {
+    line-height: 100%;
+}
+.IDX-wrapper-standard .IDX-panel-body .IDX-field {
+    border-bottom: 1px solid #dfdfdf;
+}
+.IDX-wrapper-standard .IDX-panel-body .IDX-label {
+    font-weight: bold;
+}
+.IDX-wrapper-standard #IDX-detailsBankRateTool {
+    font-size: 12pt;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+.IDX-wrapper-standard .IDX-field-price .IDX-text,
+.IDX-wrapper-standard .IDX-field-listingPrice .IDX-text {
+    font-size: 1.4em;
+}
+.IDX-wrapper-standard #IDX-detailsMap {
+    width: 100%;
+    min-height: 300px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+.IDX-wrapper-standard #IDX-map {
+    width: 100%;
+    min-height: 300px;
+    height: 100%;
+    position: relative;
+}
+.IDX-wrapper-standard #IDX-BankRateTool-Dialog {
+    display: none;
+}
+.IDX-wrapper-standard [aria-labelledby="ui-dialog-title-IDX-BankRateTool-Dialog"] {
+    max-width: 600px;
+}
+.IDX-wrapper-standard #IDX-loadingScreen {
+    display: none;
+    text-align: center;
+}
+.IDX-wrapper-standard #IDX-loadingScreen img {
+    display: block;
+    margin: 0 auto;
+}
+.IDX-wrapper-standard .IDX-row-content {
+    width: 100%;
+    display: inline-block;
+}
+.IDX-wrapper-standard .IDX-center {
+    margin: 0 auto;
+    text-align: center;
+}
+.IDX-wrapper-standard .IDX-hide,
+.IDX-wrapper-standard .IDX-hidden,
+.IDX-wrapper-standard .IDX-emptyFieldContainer {
+    display: none;
+}
+.IDX-wrapper-standard .IDX-center:after {
+    clear: both;
+    text-align: inherit;
+}
+.IDX-wrapper-standard .IDX-psudolink {
+    text-decoration: none;
+}
+.IDX-wrapper-standard .IDX-hopoZoning {
+    display: none !important;
+    visibility: hidden !important;
+}
+.IDX-wrapper-standard #IDX-firstTime-group,
+.IDX-wrapper-standard #IDX-secondTime-group {
+    vertical-align: bottom;
+}
+
+@media only screen and (min-width: 641px) {
+    .IDX-wrapper-standard .IDX-topAction {
+        display: inline-block;
+        margin-right: 4%;
+        margin-bottom: 10px;
+        min-width: 20%;
+        float: left;
+    }
+    .IDX-wrapper-standard .IDX-detailsHotAction {
+        display: inline-block;
+        float: left;
+    }
+    .IDX-wrapper-standard .IDX-detailsHotAction a {
+        text-decoration: underline;
+        border: 0px;
+        padding-left: 0;
+    }
+    .IDX-wrapper-standard .IDX-fieldContainerList {
+        display: inline-block;
+        width: 45%;
+        vertical-align: top;
+    }
+    .IDX-wrapper-standard .IDX-fieldContainerListRight {
+        left: 45%;
+        margin-left: 4%;
+    }
+    .IDX-wrapper-standard #IDX-arrow-previous,
+    .IDX-wrapper-standard #IDX-arrow-next {
+        display: inline-block;
+    }
+}
+
+{% if width != 0 or height != 0 %}
+    @media only screen and (min-width: 640px) {
+        #IDX-main #IDX-map {
+            width: {{ width }}{{ widthUnit }};
+            min-width: 300px;
+            height: {{ height }}px;
+            min-height: 300px;
+            margin: 0 auto;
+            clear: both;
+        }
+    }
+{% endif %}
+
+/* BankRate Dialog UI */
+{% if not mobile %}
+#IDX-mortgageDefaultQueryParameters {
+    display: none;
+}
+#IDX-BankRateTool-Dialog {
+    display: none;
+    overflow: visible;
+    font-size: 12pt;
+}
+#IDX-BankRateDataloading img {
+    display: block;
+    margin: 0 auto;
+}
+#IDX-mortgageRatesContent {
+    display: none;
+}
+.IDX-mortgageRatesRow {
+    margin: 5px auto;
+    text-align: center;
+}
+.IDX-mortgageRatesRow > #IDX-searchBankRate {
+    border: 0px;
+}
+.IDX-textRight {
+    text-align: right;
+}
+.IDX-textLeft {
+    text-align: left;
+}
+.IDX-noMargin {
+    margin: 0;
+}
+.IDX-mortgageRatesRow > .IDX-priceField {
+    padding-left: 5px;
+}
+.IDX-mortgageLabel:after {
+    content: ": ";
+}
+span.IDX-priceField:before {
+    content: "$ ";
+}
+.ui-dialog[aria-labelledby="ui-dialog-title-IDX-BankRateTool-Dialog"] {
+    min-width: 768px;
+}
+.ui-dialog[aria-labelledby="ui-dialog-title-IDX-BankRateTool-Dialog"] .ui-widget-header {
+    background-color: #D1D1D1;
+}
+.ui-dialog[aria-labelledby="ui-dialog-title-IDX-BankRateTool-Dialog"] #ui-dialog-title-BankRateTool-Dialog {
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 12pt;
+}
+.IDX-mortgageRatesRow > span {
+    display: inline-block;
+    width: 170px;
+    margin-right: 5px;
+}
+.IDX-mortgageRatesRow > .IDX-mortgageLabel {
+    text-align: right;
+}
+.IDX-mortgageRatesRow > select {
+    width: 220px;
+}
+.IDX-mortgageRatesRow > input {
+    width: 210px;
+}
+.IDX-mortgageRatesLogo {
+    display: inline-block;
+    position: absolute;
+    width: 180px;
+    text-align: center;
+    top: 50%;
+    margin-top: -30px;
+}
+.IDX-mortgageRatesLogo img {
+    float: left;
+}
+.IDX-mortgageRatesBottom .IDX-mortgageRatesEst {
+    padding-bottom: 5px;
+}
+.IDX-mortgageRatesBottom .IDX-mortgageRatesGoBtn {
+    display: block;
+    width: 50px;
+    height: 30px;
+    line-height: 30px;
+    text-decoration: none;
+    border-radius: 3px;
+    border: 1px solid #51a351;
+    text-align: center;
+    margin: 0 auto;
+    background-color: #5EBC5E;
+    color: #fff;
+}
+.IDX-mortgageRatesBottom .IDX-mortgageRatesGoBtn:hover {
+    background-color: #11AA11;
+}
+#IDX-mortgageShowAllRates {
+    display: inline-block;
+    text-align: center;
+    background-color: #AFAFAF;
+    height: 35px;
+    color: #000;
+    line-height: 35px;
+}
+#IDX-mortgageShowAllRates:hover {
+    background-color: #E7E7E7;
+}
+#IDX-mortgageRatesResultInfo {
+    text-align: center;
+}
+.IDX-bankRateRowContent p {
+    line-height: 12pt;
+    padding-bottom: 12px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+#IDX-searchBankRate {
+    width: 230px;
+    margin-left: 180px;
+}
+.IDX-bankRateRowContent {
+    position: relative;
+}
+.IDX-mortgageRatesLogoInfo {
+    display: inline-block;
+    height: auto;
+}
+.IDX-mortgageRatesLogo {
+    display: inline-block;
+    position: absolute;
+    width: 180px;
+    text-align: center;
+}
+.IDX-mortgageRatesBankInfo {
+    display: inline-block;
+    margin-left: 200px;
+    width: 200px
+}
+.IDX-mortgageRatesAdvertiser {
+    margin: 0;
+}
+.IDX-mortgageRatesInfo {
+    display: inline-block;
+    vertical-align: top;
+    width: 200px;
+}
+.IDX-mortgageRatesBottom {
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+}
+.IDX-mortgageRatesEst {
+    margin: 0 0 5px 0;
+}
+.IDX-mortgageRatesEst small {
+    display: block;
+}
+.IDX-mortgageRatesGoBtn {
+    max-width: 80px;
+}
+#IDX-searchBankRate {
+    width: 230px;
+    margin-left: 180px;
+}
+#IDX-mortgageShowAllRates {
+    width: 100%;
+}
+
+@media (max-width: 479px) {
+    .ui-dialog[aria-labelledby="ui-dialog-title-IDX-BankRateTool-Dialog"] {
+        min-width: 100%;
+    }
+    .IDX-mortgageRatesRow > .IDX-mortgageLabel {
+        width: 100%;
+        text-align: center;
+        display: block;
+    }
+    .IDX-mortgageLabel {
+        font-size: 14pt;
+        margin: 5px 0;
+    }
+    .IDX-mortgageRatesRow > .IDX-mortgageLabel:after {
+        content: "";
+    }
+    .IDX-mortgageRatesRow > select,
+    .IDX-mortgageRatesRow > input {
+        width: 100%;
+    }
+    .IDX-mortgageRatesLogoInfo {
+        position: relative;
+        margin-bottom: 5px;
+    }
+    .IDX-mortgageRatesLogo img {
+        height: 40px;
+    }
+    .IDX-mortgageRatesBankInfo {
+        margin-left: 50%;
+        width: 150px;
+    }
+    .IDX-mortgageRatesInfo p {
+        width: 50%;
+        display: inline-block;
+        margin: 5px 0;
+    }
+    .IDX-mortgageRatesEst {
+        text-align: center;
+        color: #000EB9;
+        font-size: 14pt;
+    }
+    .IDX-mortgageRatesLogoInfo {
+        position: relative;
+        display: block;
+    }
+    .IDX-mortgageRatesInfo {
+        margin-top: 10px;
+        display: block;
+        width: 100%;
+    }
+    .IDX-mortgageRatesInfo p {
+        width: 50%;
+        display: inline-block;
+        margin: 5px 0;
+    }
+    .IDX-mortgageRatesLogo {
+        display: inline-block;
+        position: absolute;
+        width: 50%;
+        text-align: center;
+        top: 50%;
+        height: 60px;
+        margin-top: -30px;
+    }
+    .IDX-mortgageRatesBankInfo {
+        margin-left: 50%;
+    }
+    .IDX-mortgageRatesBottom {
+        position: relative;
+        display: block;
+    }
+    .IDX-mortgageRatesBottom .IDX-mortgageRatesGoBtn {
+        margin-top: 5px;
+        width: 100%;
+        max-width: none;
+    }
+    .IDX-mortgageRatesEst small {
+        display: inline-block;
+    }
+    #IDX-searchBankRate {
+        width: 100%;
+        max-width: 450px;
+        margin: 0;
+    }
+}
+
+@media (min-width: 480px) {
+    .ui-dialog[aria-labelledby="ui-dialog-title-IDX-BankRateTool-Dialog"] {
+        min-width: 450px;
+        width: 450px;
+        padding: 0;
+    }
+    .IDX-mortgageRatesRow > span {
+        display: inline-block;
+        width: 170px;
+        margin-right: 5px;
+    }
+    .IDX-mortgageRatesRow > .IDX-mortgageLabel {
+        text-align: right;
+    }
+    .IDX-mortgageRatesRow > select {
+        width: 220px;
+    }
+    .IDX-mortgageRatesRow > .IDX-priceField {
+        box-sizing: border-box;
+        width: 220px;
+        display: inline-block;
+    }
+    .IDX-mortgageRatesLogoInfo {
+        position: relative;
+        display: block;
+    }
+    .IDX-mortgageRatesInfo {
+        margin-top: 10px;
+        display: block;
+        width: 100%;
+    }
+    .IDX-mortgageRatesInfo p {
+        width: 50%;
+        display: inline-block;
+        margin: 5px 0;
+    }
+    .IDX-mortgageRatesLogo {
+        display: inline-block;
+        position: absolute;
+        width: 50%;
+        text-align: center;
+        top: 50%;
+        height: 60px;
+        margin-top: -30px;
+    }
+    .IDX-mortgageRatesLogo img {
+        height: 60px;
+    }
+    .IDX-mortgageRatesBankInfo {
+        margin-left: 50%;
+    }
+    .IDX-mortgageRatesBottom {
+        position: relative;
+        display: block;
+    }
+    .IDX-mortgageRatesEst {
+        text-align: center;
+        color: #000EB9;
+        font-size: 14pt;
+    }
+    .IDX-mortgageRatesEst small {
+        display: inline-block;
+    }
+    .IDX-mortgageRatesBottom .IDX-mortgageRatesGoBtn {
+        width: 100%;
+        max-width: none;
+    }
+    #IDX-mortgageShowAllRates {
+        width: 100%;
+    }
+    #IDX-searchBankRate {
+        width: 100%;
+        max-width: 480px;
+        margin: 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .ui-dialog[aria-labelledby="ui-dialog-title-IDX-BankRateTool-Dialog"] {
+        min-width: 768px;
+    }
+    .IDX-bankRateRowContent {
+        position: relative;
+        min-height: 75px;
+    }
+    .IDX-mortgageRatesLogoInfo {
+        display: inline-block;
+    }
+    #IDX-searchBankRate {
+        width: 230px;
+        margin-left: 180px;
+    }
+    .IDX-mortgageRatesLogo {
+        display: inline-block;
+        position: absolute;
+        width: 180px;
+        text-align: center;
+        top: 50%;
+        margin-top: -30px;
+    }
+    .IDX-mortgageRatesBankInfo {
+        margin-left: 200px;
+        width: 200px
+    }
+    .IDX-mortgageRatesAdvertiser {
+        margin: 0;
+    }
+    .IDX-mortgageRatesInfo {
+        display: inline-block;
+        vertical-align: top;
+        width: 200px;
+    }
+    .IDX-mortgageRatesBottom {
+        position: absolute;
+        right: 0;
+        top: 10px;
+    }
+    .IDX-mortgageRatesEst {
+        margin: 0 0 5px 0;
+    }
+    .IDX-mortgageRatesEst small {
+        display: block;
+    }
+    .IDX-mortgageRatesGoBtn {
+       max-width: 80px;
+    }
+}
+{% else %}
+    .IDX-noMargin {
+        margin: 0;
+    }
+    #IDX-BankRateDataloading {
+        text-align: center;
+    }
+    .IDX-mortgageRatesRow input {
+        text-align: center;
+    }
+    .IDX-mortgageRatesRow .IDX-listingData {
+        text-align: center;
+    }
+    #IDX-mortgageDefaultQueryParameters {
+        display: none;
+    }
+    .IDX-mortgageRatesRow > .IDX-mortgageLabel {
+        width: 100%;
+        text-align: center;
+        display: block;
+    }
+    .IDX-mortgageLabel {
+        font-size: 14pt;
+        margin: 5px  0;
+    }
+    .IDX-mortgageRatesRow > .IDX-mortgageLabel:after {
+        content: "";
+    }
+    .IDX-mortgageRatesRow > select, .IDX-mortgageRatesRow > input {
+        width: 100%;
+    }
+    .IDX-mortgageRatesLogoInfo {
+        position: relative;
+        margin-bottom: 5px;
+    }
+    .IDX-mortgageRatesLogo{
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        height: 40px;
+        margin-top: -20px;
+    }
+    .IDX-mortgageRatesBankInfo {
+        margin-left: 50%;
+        width: auto;
+    }
+    .IDX-mortgageRatesPhone a {
+        color:#fff;
+    }
+    .IDX-mortgageRatesInfo p{
+        width: 50%;
+        display: inline-block;
+        margin: 5px 0;
+    }
+    .IDX-mortgageRatesEst {
+        text-align: center;
+        font-size: 14pt;
+    }
+    .IDX-mortgageRatesLogoInfo {
+        position: relative;
+        display: block;
+    }
+    .IDX-mortgageRatesInfo {
+        margin-top: 10px;
+        display: block;
+        width: 100%;
+    }
+    .IDX-mortgageRatesInfo p{
+        width: 50%;
+        display: inline-block;
+        text-align: center;
+    }
+    .IDX-mortgageRatesLogo {
+        display: inline-block;
+        width: 50%;
+        text-align: center;
+        height: 60px;
+    }
+
+    .IDX-mortgageRatesBottom {
+        position: relative;
+        display: block;
+    }
+
+    .IDX-mortgageRatesBottom .IDX-mortgageRatesGoBtn {
+        margin-top: 5px;
+        display: block;
+        width: 100%;
+        text-align: center;
+        color: #FFF;
+        background
+        max-width: none;
+        -webkit-background-clip: padding-box;
+        -webkit-background-origin: padding-box;
+        -webkit-background-size: auto;
+        -webkit-box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px 0px;
+        background-attachment: scroll;
+        background-clip: padding-box;
+        background-color: rgb(51, 51, 51);
+        background-image: linear-gradient(rgb(68, 68, 68), rgb(45, 45, 45));
+        background-origin: padding-box;
+        background-size: auto;
+        border-bottom-color: rgb(17, 17, 17);
+        border-bottom-left-radius: 16px;
+        border-bottom-right-radius: 16px;
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        border-image-outset: 0px;
+        border-image-repeat: stretch;
+        border-image-slice: 100%;
+        border-image-source: none;
+        border-image-width: 1;
+        border-left-color: rgb(17, 17, 17);
+        border-left-style: solid;
+        border-left-width: 1px;
+        border-right-color: rgb(17, 17, 17);
+        border-right-style: solid;
+        border-right-width: 1px;
+        border-top-color: rgb(17, 17, 17);
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px;
+        border-top-style: solid;
+        border-top-width: 1px;
+        box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px 0px;
+        color: rgb(255, 255, 255);
+        cursor: pointer;
+        display: block;
+        font-family: Helvetica, Arial, sans-serif;
+        font-weight: bold;
+        height: 38.1875px;
+        margin-bottom: 8px;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 8px;
+        padding-bottom: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 0px;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        text-shadow: rgb(17, 17, 17) 0px 1px 1px;
+        line-height: 40px;
+    }
+
+    .IDX-mortgageRatesEst small {
+        display: inline-block;
+    }
+{% endif %}
+
+.IDX-carouselThumb {
+    position: relative;
+    float: left;
+    width: 65px;
+    height: 65px;
+    background-color: #fff;
+    border: 1px solid #f0f0f0;
+    line-height: 65px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.IDX-carouselWrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 65px;
+}
+
+.IDX-carouselNavWrapper {
+    display: block;
+    position: absolute;
+    top: 8px;
+    width: 30px;
+    height: 65px;
+    line-height: 65px;
+    vertical-align: middle;
+    text-align: center;
+    background-color: #595959;
+    color: #fff;            
+    cursor: pointer;
+}
+.IDX-carouselNavWrapper.IDX-carouselLeft {
+    left: 0;
+}
+
+.IDX-carouselNavWrapper.IDX-carouselRight {
+    right: 0;
+}
+
+#featuredImage {
+    margin: 0 auto;
+}
+
+.IDX-showcaseSlide-active {
+    border: 1px solid #8CC63E;
+}
